@@ -50,7 +50,7 @@ Clone this repository:
 
 ```shell
 git clone https://github.com/cole-miles/InvestecPushNotifications.git
-cd investec-transaction-monitor
+cd InvestecPushNotifications
 ```
   
 Install dependencies:
@@ -59,7 +59,7 @@ Install dependencies:
 npm install
 ```
 
-### 4. Configuration
+### 5. Configuration
 
 #### Environment Variables
 
@@ -94,7 +94,7 @@ By default, the application uses the first account returned by the Investec API.
 const mainAccountID = accounts[0].accountId;  // Change index if needed
 ```
 
-### 5. Deployment
+### 6. Deployment
 
 Deploy the cloned project to Google Cloud Functions:
 
@@ -110,7 +110,7 @@ Replace 'PROJECT ID' with the ID of your created gcloud project.
   
 Run this command to deploy the application to your google cloud project.
 ```shell
-gcloud functions deploy transferHandler \
+gcloud functions deploy notificationHandler \
   --runtime nodejs20 \
   --trigger-http \
   --allow-unauthenticated \
@@ -118,11 +118,11 @@ gcloud functions deploy transferHandler \
 ```
 **NB:** you must use the region that you set your gcloud project to.  
 
-### 6. Setting up Cloud Scheduler
+### 7. Setting up Cloud Scheduler
 
 - Go to Google Cloud Console > Cloud Scheduler  
 - Create a new job  
-- Set the frequency (e.g., `*/5 * * * *` for every 5 minutes, I have mine set to every 30 minutes but this is personal preference)  
+- Set the frequency (You may set the frequency to your preference (e.g., every 5 minutes: */5 * * * *; I use every 30 minutes).  
 - Set the target as HTTP  
 - Use the Cloud Function URL as the endpoint  
 - Set the HTTP method to POST  
