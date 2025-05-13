@@ -129,7 +129,7 @@ gcloud functions deploy notificationHandler \
 
 ## Related Projects
 
-**Firestore Cleanup Function** – A companion application that periodically cleans up the Firestore database. You can find this on my page as a public repo as well.  
+**Firestore Cleanup Function** – A companion application that periodically cleans up the Firestore database. You can find this [here](https://github.com/cole-miles/InvestecPushNotificationsCleanUp).
   
 **I highly recommend that you clone and push the Cleanup Function to the same gcloud project as this function to avoid going over free cost caps**
 
